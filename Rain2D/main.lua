@@ -9,7 +9,8 @@ function love.load()
 end
 function love.update(dt)
 
-    --function rain:beginRain(dt, noRandom) noRandom means you wont get the illusion of rain much
+    --function rain:beginRain(dt, noRandom) noRandom means you wont get the illusion of rain much and 
+    --droplets fall into edge of screen/collision
     rain:beginRain(dt)
 
 end
