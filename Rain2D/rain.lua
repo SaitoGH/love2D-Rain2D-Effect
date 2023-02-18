@@ -5,7 +5,7 @@ math.randomseed(os.time())
 local winWidth = love.graphics.getWidth()
 local global_cd_drop_rate = 0.005
 local rain = {
-    cooldown_per_drop = global_cd_drop_rate,--CD Rain must be the same
+    cooldown_per_drop = global_cd_drop_rate,
     grav=9.81
 }
 local droplets = {}
