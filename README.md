@@ -1,11 +1,41 @@
 # love2D-Rain2D
 My short project on recreating rain on Love2D using Lua.<br>
-Sprite By Me.
-# Libraries Used
+Sprite By <b>Me</b>.<br>
+
+## Code Example 
+```lua
+--main.lua
+local rain = require 'rain'
+
+function love.update(dt)
+
+    --function rain:beginRain(dt, noRandom) noRandom means you wont get the illusion of rain much and 
+    --droplets fall into edge of screen/collision
+    rain:beginRain(dt)
+    
+end
+
+function love.draw()
+    --function rain:rainDraw() Draws the rain
+    rain:rainDraw()
+
+    rain:dropletsInfo() --optional, ONLY SET TRUE IF YOU TEST WITH SMALL AMOUNT OF RAIN
+
+    --function rain:splashCollide(x,y,w,h) set collision for different objects
+    rain:splashCollide(ground.x, ground.y, ground.w,ground.h)  --optional
+end
+```
+Rate Of Droplets Falling is determined by 
+```lua
+--rain.lua
+local global_cd_drop_rate = 0.005 -- The lower, the higher the rate
+grav = 9.81 -- determines the velocity at which the droplets are falling
+```
+## Libraries Used
   * Anim8 
     - https://github.com/kikito/anim8
   * Slider
-    - (Not required,I made it for testing purposes).
+    - (Not required,I made it for <ins>testing purposes</ins>).
 
 ## Rain Examples 
 Rain Demo(with Random)<br>
