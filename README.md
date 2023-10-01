@@ -1,5 +1,5 @@
 # love2D-Rain2D
-My short project on recreating rain on Love2D using Lua.<br>
+My free-to-use short project on recreating rain on Love2D using Lua.<br>
 Sprite By <b>Me</b>.<br>
 
 ## Code Example 
