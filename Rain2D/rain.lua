@@ -17,8 +17,17 @@ droplets.table = {}
  local r_s = {x=winWidth-100,y=10,w=100,h=20}
  rainSlider = slider:newSlider(r_s.x, r_s.y, 0, r_s.w, r_s.h)--rainSlider
 
+
 --Rain background audio
-local rain_sound = love.audio.newSource("lightrain.mp3", "stream")
+local rain_sound
+local checkFile =io.open("lightrain.mp3","r")
+if checkFile ~=nil then 
+    io.close("lightrain.mp3")
+    rain_sound = love.audio.newSource("lightrain.mp3", "stream") -- Optional, you may delete the audio.
+else
+    rain_sound = nil
+end
+
 
 --Splash animation and settings and tables
 local splash_table = {}
@@ -68,7 +77,9 @@ function rain:beginRain(dt, noRandom)
         end
     end
     --Run rain background audio
-    rain_sound:play()
+    if rain_sound ~= nil then
+        rain_sound:play()
+    end 
     --rain drop cooldown
     rain.cooldown_per_drop = rain.cooldown_per_drop - dt
     if rain.cooldown_per_drop <= 0  then
